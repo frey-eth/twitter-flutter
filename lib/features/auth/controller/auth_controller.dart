@@ -41,7 +41,7 @@ class AuthController extends StateNotifier<bool> {
         _userAPI = userAPI,
         super(false);
   // state : isLoading
-  Future<model.User?> currentUser() => _authAPI.currentUserAccount();
+  Future<model.Account?> currentUser() => _authAPI.currentUserAccount();
   // _account.get() != null ? HomeView : Login
   void signUp({
     required String email,
@@ -60,8 +60,8 @@ class AuthController extends StateNotifier<bool> {
         UserModel userModel = UserModel(
             email: email,
             name: getNameFromEmail(email),
-            followers: [],
-            following: [],
+            followers: const [],
+            following: const [],
             profilePic: '',
             bannerPic: '',
             uid: r.$id,
